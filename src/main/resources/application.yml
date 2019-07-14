@@ -1,0 +1,20 @@
+
+spring:
+  profiles:
+    active: prod
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      druid:
+        initial-size: 5
+        max-active: 20
+        min-idle: 5
+        #监控视图配置
+        stat-view-servlet:
+          login-username: admin
+          login-password: ENC(KV+OuaEiZx5AG3/24nzcoA==)
+
+mybatis:
+   mapperLocations: classpath:/mapper/*.xml
+   type-aliases-package: com.sicau.managersystem.POJO.DO,com.sicau.managersystem.POJO.DTO,com.sicau.managersystem.POJO.VO
+   configuration:
+     map-underscore-to-camel-case: true

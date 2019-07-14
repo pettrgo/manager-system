@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sicau.managersystem.dao.UserMapper">
+
+    <select id="getUserById" parameterType="String" resultType="User">
+        select * from user
+        where id=#{id}
+    </select>
+
+    <select id="getAllUsers" resultType="User">
+        select * from user id=#{id}
+    </select>
+
+    <update id="updateUser" parameterType="User">
+        update user set id=#{id},user_name=#{userName},real_name=#{realName},email=#{email},phone=#{phone},address=#{adress},locked=#{locked},delected=#{delected}
+        where id=#{id}
+    </update>
+
+    <insert id="insertUser" parameterType="User">
+        insert into user ('id','user_name','real_name','email','phone','address',
+        'locked','delected')  values
+        (#{id},#{userName},#{realName},#{email},#{phone},#{adress},#{locked},#{delected})
+    </insert>
+
+
+
+
+</mapper>
